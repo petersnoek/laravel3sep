@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');     // resources/views/welcome.blade.php
 });
 
-// http://localhost:8000/users
-Route::get('/users', 'UserController@dood');
+// http://localhost:8000/cart
+Route::get('/cart', 'CartController@index');
+Route::get('/cart/destroy', 'CartController@destroy');
+Route::get('/cart/setamount/{id}/{amount}', 'CartController@setamount');
+
+
 
 Auth::routes();
 
